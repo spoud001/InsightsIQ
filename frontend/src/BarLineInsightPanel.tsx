@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || "";
+
 interface BarLineInsightPanelProps {
   datasetId: number;
   columns: string[];
 }
-
-const API_URL = 'http://localhost:8000/data';
 
 const BarLineInsightPanel: React.FC<BarLineInsightPanelProps> = ({ datasetId, columns }) => {
   const [x, setX] = useState('');

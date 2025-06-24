@@ -4,7 +4,7 @@ import MLInsightPanel from './MLInsightPanel';
 import ChartRegistryPanel from "./ChartRegistryPanel";
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/data";
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 const AdvancedAnalyticsPanel: React.FC<{ datasetId: number; columns: string[]; onAdd: (insight: any) => void }> = ({ datasetId, columns, onAdd }) => {
   const [x, setX] = useState("");

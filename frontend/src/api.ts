@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/auth'; // Update if backend URL changes
+const API_URL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/auth` : '/auth';
 
 export const register = async (email: string, password: string, full_name?: string) => {
   return axios.post(`${API_URL}/register`, { email, password, full_name });

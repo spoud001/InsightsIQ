@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ChatSidebar from './ChatSidebar';
 
-const API_URL = 'http://localhost:8000/data';
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 interface DatasetPanelProps {
   onSelectDataset?: (id: number, columns: string[]) => void;

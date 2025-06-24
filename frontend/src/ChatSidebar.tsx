@@ -37,7 +37,7 @@ const ChatSidebar: React.FC<ChatSidebarProps> = ({ datasetId, isPrepared, onPrep
     setMessages((msgs) => [...msgs, { role: "user", content: input }]);
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:8000/data/datasets/${datasetId}/ask_question`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/datasets/${datasetId}/ask_question`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 export default function InsightPanel({ datasetId, columns }: { datasetId: number, columns: string[] }) {
   const [x, setX] = useState('');
   const [y, setY] = useState('');
@@ -18,7 +20,7 @@ export default function InsightPanel({ datasetId, columns }: { datasetId: number
     setChart(null);
     setSummary('');
     try {
-      const res = await axios.post(`http://localhost:8000/data/datasets/${datasetId}/insights`, { x, y, chart_type: chartType }, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.post(`${API_URL}/datasets/${datasetId}/insights`, { x, y, chart_type: chartType }, { headers: { Authorization: `Bearer ${token}` } });
       setChart('data:image/png;base64,' + res.data.chart);
       setSummary(res.data.summary);
     } catch (err: any) {

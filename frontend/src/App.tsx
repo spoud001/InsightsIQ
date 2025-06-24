@@ -9,6 +9,8 @@ import BarLineInsightPanel from './BarLineInsightPanel';
 import DashboardPanel from './DashboardPanel';
 import MLInsightPanel from './MLInsightPanel';
 
+const API_URL = import.meta.env.VITE_API_URL || "";
+
 const navItems = [
   { label: 'Datasets', path: '/datasets' },
   { label: 'Insights', path: '/insights' },
@@ -84,7 +86,7 @@ function InsightsPage() {
 
   useEffect(() => {
     if (!token) return;
-    axios.get('http://localhost:8000/data/datasets', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get(`${API_URL}/datasets`, { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setDatasets(res.data))
       .catch(() => setDatasets([]));
   }, [token]);
@@ -92,7 +94,7 @@ function InsightsPage() {
   // Fetch columns when dataset is selected
   useEffect(() => {
     if (!selected) return;
-    axios.get(`http://localhost:8000/data/datasets/${selected}/preview?rows=1`, { headers: { Authorization: `Bearer ${token}` } })
+    axios.get(`${API_URL}/datasets/${selected}/preview?rows=1`, { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setColumns(res.data.columns || []))
       .catch(() => setColumns([]));
   }, [selected, token]);
@@ -129,7 +131,7 @@ function AdvancedAnalyticsPage() {
 
   useEffect(() => {
     if (!token) return;
-    axios.get('http://localhost:8000/data/datasets', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get(`${API_URL}/datasets`, { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setDatasets(res.data))
       .catch(() => setDatasets([]));
   }, [token]);
@@ -137,7 +139,7 @@ function AdvancedAnalyticsPage() {
   // Fetch columns when dataset is selected
   useEffect(() => {
     if (!selected) return;
-    axios.get(`http://localhost:8000/data/datasets/${selected}/preview?rows=1`, { headers: { Authorization: `Bearer ${token}` } })
+    axios.get(`${API_URL}/datasets/${selected}/preview?rows=1`, { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setColumns(res.data.columns || []))
       .catch(() => setColumns([]));
   }, [selected, token]);
