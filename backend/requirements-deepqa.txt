@@ -1,7 +1,0 @@
-faiss-cpu
-sentence-transformers
-openai
-pandas
-fastapi
-uvicorn
-python-multipart
