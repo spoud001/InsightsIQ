@@ -8,7 +8,7 @@ interface InsightCardProps {
   onExport?: () => void;
 }
 
-const InsightCard: React.FC<Omit<InsightCardProps, 'summary'> & { summary?: string }> = ({ chart, summary, modelInfo, onDelete, onExport }) => (
+const InsightCard: React.FC<Omit<InsightCardProps, 'summary'> & { summary?: string }> = ({ chart, modelInfo, onDelete, onExport }) => (
   <div className="bg-white rounded shadow p-4 flex flex-col">
     <img src={`data:image/png;base64,${chart}`} alt="chart" className="rounded mb-2" />
     {/* Remove summary display for advanced ML insights */}

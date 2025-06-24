@@ -6,7 +6,7 @@ import axios from 'axios';
 import './index.css';
 import DatasetPanel from './DatasetPanel';
 import BarLineInsightPanel from './BarLineInsightPanel';
-import DashboardPanel from './DashboardPanel';
+
 import MLInsightPanel from './MLInsightPanel';
 
 const API_URL = import.meta.env.VITE_API_URL || "";

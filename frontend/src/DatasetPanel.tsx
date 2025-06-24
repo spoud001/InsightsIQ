@@ -11,9 +11,8 @@ interface DatasetPanelProps {
 
 export default function DatasetPanel({ onSelectDataset }: DatasetPanelProps) {
   const [datasets, setDatasets] = useState<any[]>([]);
-  const [selected, setSelected] = useState<number|null>(null);
+
   const [preview, setPreview] = useState<{columns: string[], rows: any[][]}|null>(null);
-  const [showInsight, setShowInsight] = useState(false);
   const [rows, setRows] = useState(10);
   const [file, setFile] = useState<File|null>(null);
   const [uploading, setUploading] = useState(false);

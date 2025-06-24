@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import InsightCard from "./InsightCard";
 import MLInsightPanel from './MLInsightPanel';
 import ChartRegistryPanel from "./ChartRegistryPanel";
