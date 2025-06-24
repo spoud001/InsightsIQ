@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'  # Python 3.13 is too new for production use
+          python-version: '3.10'  
 
       - name: Install dependencies
         working-directory: backend
