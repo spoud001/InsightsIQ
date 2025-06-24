@@ -11,6 +11,8 @@ passlib[bcrypt]
 python-jose[cryptography]
 faiss-cpu
 sentence-transformers
+torch  # Required for sentence-transformers
+transformers  # Hugging Face model loader
 openai>=1.0.0
 python-dotenv
 pydantic
