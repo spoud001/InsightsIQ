@@ -416,7 +416,7 @@ def dataset_summary(dataset_id: int, db: Session = Depends(get_db), user: User =
 dataset_qa_chunks = {}  # dataset_id: { 'chunks': [str], 'embeddings': np.ndarray }
 faiss_indexes = {}  # dataset_id: FAISS index
 
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "models/minilm"
 CHUNK_SIZE = 250
 TOP_K = 5
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
